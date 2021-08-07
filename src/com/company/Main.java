@@ -7,6 +7,8 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Main {
 
@@ -21,19 +23,18 @@ public class Main {
 
         System.out.println("What is on today's agenda?");
         String agenda = input.nextLine();
-
-        System.out.println(agenda);
-
-        int i = 0;
-        for(int i = 0; i < agenda; i++){
-
-        }
+        System.out.println("On today's agenda: " + agenda);
 
 
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                System.out.println("Task complete");
+            }
+        };
+        Timer timer = new Timer();
 
-
-
-
+        timer.schedule(task, );
 
 
 
