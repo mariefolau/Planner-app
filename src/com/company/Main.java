@@ -26,6 +26,10 @@ public class Main {
         System.out.println("On today's agenda: " + agenda);
 
         ArrayList<String> toDoList = new ArrayList<>();
+
+        new TaskTimer(5);
+        System.out.format("Task scheduled.. Now wait for 5 sec to see next message..%n");
+
         System.out.println("Enter your to-do List: ");
         Scanner list = new Scanner(System.in);
 
@@ -72,6 +76,8 @@ public class Main {
         return Selection;
 
     }
+
+
 
 
 }

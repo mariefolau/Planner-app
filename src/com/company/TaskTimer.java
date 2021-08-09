@@ -20,8 +20,4 @@ public class TaskTimer {
         }
     }
 
-    public static void main(String args[]) {
-        new TaskTimer(5);
-        System.out.format("Task scheduled.. Now wait for 5 sec to see next message..%n");
-    }
 }
