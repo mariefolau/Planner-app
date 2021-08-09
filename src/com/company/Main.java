@@ -5,10 +5,7 @@ import jdk.internal.util.xml.impl.Input;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 
 public class Main {
 
@@ -20,24 +17,39 @@ public class Main {
         System.out.println(ldt);
 
         Scanner input = new Scanner(System.in);
-
         System.out.println("What is on today's agenda?");
         String agenda = input.nextLine();
         System.out.println("On today's agenda: " + agenda);
 
+        ArrayList<String> toDoList = new ArrayList<>();
+        System.out.println("Enter your to-do List: ");
+        Scanner list = new Scanner(System.in);
 
-        TimerTask task = new TimerTask() {
-            @Override
-            public void run() {
-                System.out.println("Task complete");
-            }
-        };
-        Timer timer = new Timer();
+        String line;
+        while(!(line = input.nextLine()).equals("end")){
+            toDoList.add(line);
+        }
 
-        timer.schedule(task, );
-
-
-
-
+        Collections.sort(toDoList);
+        System.out.println(toDoList);
     }
+
+
+//        TimerTask task = new TimerTask() {
+//            @Override
+//            public void run() {
+//                System.out.println("Task complete");
+//            }
+//        };
+//        Timer timer = new Timer();
+//
+//        timer.schedule(task, 1000);
+//
+//        timer.cancel();
+
+
 }
+
+
+
+
