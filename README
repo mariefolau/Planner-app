@@ -9,6 +9,34 @@ When working on a tight schedule and not knowing which task to attack first, the
 Target audience?
 Business Individuals in the corporate world.
 
-Features that are included in the POR APP?
+Features that are included in the Planner app?
+-
+-
+-
+
+Implementation Plan
+
+How to use the APP:
+Step 1:
+Run the app from Main.
+
+Step 2:
+Enter today's agenda e.g (Eat, sleep, repeat).
+It will store the data into the system.
+
+Step 3:
+Enter your list of to-do's numbered from 1
+onwards. After each entry, press enter. For e.g,
+(1.Eat
+2. Sleep
+3. Repeat). If the numbers are unsorted, the app
+will be able to sort it from ascending order.
+Once you're done listing your daily tasks,
+enter "end".
+
+Step 4:
+If you would like to add to your task, select '1',
+otherwise select '2' to move on.
+If option 1 was selected,
 
 

@@ -20,6 +20,8 @@ public class Main {
         LocalDateTime ldt = LocalDateTime.now();
         System.out.println(ldt);
 
+        new TaskTimer(1000);
+
         Scanner input = new Scanner(System.in);
         System.out.println("What is on today's agenda?");
         String agenda = input.nextLine();
@@ -27,7 +29,7 @@ public class Main {
 
         ArrayList<String> toDoList = new ArrayList<>();
 
-        new TaskTimer(5);
+
         System.out.format("Task scheduled.. Now wait for 5 sec to see next message..%n");
 
         System.out.println("Enter your to-do List: ");
@@ -70,12 +72,13 @@ public class Main {
 
         Selection = yn.nextInt();
             if (Selection == 1) {
-                toDoList.add();
                System.out.println(); // add to array List
         }
         return Selection;
 
     }
+
+
 
 
 
