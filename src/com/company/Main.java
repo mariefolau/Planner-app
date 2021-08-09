@@ -45,13 +45,16 @@ public class Main {
                     System.out.println("Option 1 selected. Please add to your task");
                     break;
                 case 2:
-                    System.out.println("Please continue ahead.");
+                    System.out.println("Continue ahead.");
                     break;
                 default:
                     break;
+
             }
+
         }
         while (Selected > 2);
+
     }
 
     public static int yesOrNo() {
@@ -62,15 +65,15 @@ public class Main {
         System.out.println("2 - no");
 
         Selection = yn.nextInt();
-
-        if (Selection == 1) {
-            
-        } else {
-
+            if (Selection == 1) {
+                toDoList.add();
+               System.out.println(); // add to array List
         }
         return Selection;
 
     }
+
+
 }
 
 
