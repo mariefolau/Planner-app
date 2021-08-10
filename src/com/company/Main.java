@@ -55,9 +55,6 @@ public class Main {
 
     }
 
-//        new TaskTimer(5000);
-//        System.out.format("Task scheduled.. Now wait for 5 sec to see next message..%n");
-
 
     private static void enterToDoList() {
         System.out.println("Enter your to-do List: ");
