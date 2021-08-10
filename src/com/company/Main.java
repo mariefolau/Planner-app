@@ -11,7 +11,8 @@ import java.util.*;
 
 public class Main {
 
-    private static Clipboard toDoList;
+
+    static ArrayList<String> toDoList = new ArrayList<>();
 
     public static void main(String[] args) {
 
@@ -20,38 +21,28 @@ public class Main {
         LocalDateTime ldt = LocalDateTime.now();
         System.out.println(ldt);
 
-        new TaskTimer(1000);
-
         Scanner input = new Scanner(System.in);
         System.out.println("What is on today's agenda?");
         String agenda = input.nextLine();
         System.out.println("On today's agenda: " + agenda);
 
-        ArrayList<String> toDoList = new ArrayList<>();
+
+        enterToDoList();
 
 
-        System.out.format("Task scheduled.. Now wait for 5 sec to see next message..%n");
+//        new TaskTimer(5000);
+//        System.out.format("Task scheduled.. Now wait for 5 sec to see next message..%n");
 
-        System.out.println("Enter your to-do List: ");
-        Scanner list = new Scanner(System.in);
-
-        String line;
-        while (!(line = input.nextLine()).equalsIgnoreCase("end")) {
-            toDoList.add(line);
-        }
-
-        Collections.sort(toDoList);
-        System.out.println(toDoList);
 
         int Selected;
         do {
             Selected = yesOrNo();
             switch (Selected) {
                 case 1:
-                    System.out.println("Option 1 selected. Please add to your task");
+                    System.out.println("Your tasks are now up to date");
                     break;
                 case 2:
-                    System.out.println("Continue ahead.");
+                    System.out.println("No tasks added");
                     break;
                 default:
                     break;
@@ -63,6 +54,20 @@ public class Main {
 
     }
 
+    private static void enterToDoList() {
+        System.out.println("Enter your to-do List: ");
+        Scanner list = new Scanner(System.in);
+
+        String line;
+        while (!(line = list.nextLine()).equalsIgnoreCase("end")) {
+            toDoList.add(line);
+        }
+
+        Collections.sort(toDoList);
+        System.out.println("Task scheduled: " + toDoList);
+    }
+
+
     public static int yesOrNo() {
         int Selection;
         Scanner yn = new Scanner(System.in);
@@ -71,28 +76,21 @@ public class Main {
         System.out.println("2 - no");
 
         Selection = yn.nextInt();
-            if (Selection == 1) {
-               System.out.println(); // add to array List
+
+        if (Selection == 1) {
+           enterToDoList();
+
         }
         return Selection;
 
+
     }
-
-
-
-
 
 
 }
 
 
-
-
-
-
-
-
-       // TimerTask task = new TimerTask() {
+// TimerTask task = new TimerTask() {
 //            @Override
 //            public void run() {
 //                System.out.println("Task complete");
