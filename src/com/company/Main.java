@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.*;
+import java.util.Timer;
 
 public class Main {
 
@@ -30,10 +31,6 @@ public class Main {
         enterToDoList();
 
 
-//        new TaskTimer(5000);
-//        System.out.format("Task scheduled.. Now wait for 5 sec to see next message..%n");
-
-
         int Selected;
         do {
             Selected = yesOrNo();
@@ -52,7 +49,15 @@ public class Main {
         }
         while (Selected > 2);
 
+        Timer timer = new Timer();
+        Scheduler scMain = new Scheduler();
+        timer.scheduleAtFixedRate(scMain, 0, 10000);
+
     }
+
+//        new TaskTimer(5000);
+//        System.out.format("Task scheduled.. Now wait for 5 sec to see next message..%n");
+
 
     private static void enterToDoList() {
         System.out.println("Enter your to-do List: ");
@@ -68,6 +73,8 @@ public class Main {
     }
 
 
+
+
     public static int yesOrNo() {
         int Selection;
         Scanner yn = new Scanner(System.in);
@@ -78,31 +85,17 @@ public class Main {
         Selection = yn.nextInt();
 
         if (Selection == 1) {
-           enterToDoList();
+            enterToDoList();
 
         }
         return Selection;
-
-
     }
 
 
-}
 
 
-// TimerTask task = new TimerTask() {
-//            @Override
-//            public void run() {
-//                System.out.println("Task complete");
-//            }
-//        };
-//        Timer timer = new Timer();
-//
-//        timer.schedule(task, 1000);
-//
-//        timer.cancel();
 
-
+    }
 
 
 
