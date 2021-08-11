@@ -18,7 +18,7 @@ class MainTest {
         int actual = Main.UserSelection(new Scanner(in));
         assertEquals(1, actual);
 
-        
+
 
     }
 
