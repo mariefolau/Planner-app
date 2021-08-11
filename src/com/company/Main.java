@@ -58,7 +58,7 @@ public class Main {
 
 
     private static void enterToDoList(Scanner list) {
-        System.out.println("Enter your to-do List: " + "Print 'end' at end of tasks list");
+        System.out.println("Enter your to-do list and print 'end' at end of tasks list");
 
         String line;
         while (!(line = list.nextLine()).equalsIgnoreCase("end")) {
