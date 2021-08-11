@@ -20,4 +20,13 @@ class MainTest {
 
     }
 
+    @Test
+    public void testSelectionIsNotEqualToOneOrTwo() {
+
+        System.out.println("Invalid input. Please try again.");
+
+    }
+
+
+
 }
