@@ -28,12 +28,12 @@ public class Main {
         System.out.println("On today's agenda: " + agenda);
 
 
-        enterToDoList();
+        enterToDoList(input);
 
 
         int Selected;
         do {
-            Selected = yesOrNo();
+            Selected = UserSelection(new Scanner(System.in));
             switch (Selected) {
                 case 1:
                     System.out.println("Your tasks are now up to date");
@@ -50,15 +50,15 @@ public class Main {
         while (Selected > 2);
 
         Timer timer = new Timer();
-        Scheduler scMain = new Scheduler();
+        Reminder scMain = new Reminder();
         timer.scheduleAtFixedRate(scMain, 0, 10000);
+
 
     }
 
 
-    private static void enterToDoList() {
+    private static void enterToDoList(Scanner list) {
         System.out.println("Enter your to-do List: ");
-        Scanner list = new Scanner(System.in);
 
         String line;
         while (!(line = list.nextLine()).equalsIgnoreCase("end")) {
@@ -72,20 +72,21 @@ public class Main {
 
 
 
-    public static int yesOrNo() {
-        int Selection;
-        Scanner yn = new Scanner(System.in);
+    public static int UserSelection(Scanner yn) {
+        int selection;
         System.out.println("Do you want to add to your task?");
         System.out.println("1 - yes");
         System.out.println("2 - no");
 
-        Selection = yn.nextInt();
+        selection = yn.nextInt();
 
-        if (Selection == 1) {
-            enterToDoList();
+        if (selection == 1) {
+            enterToDoList(yn);
 
+        }else if(selection != 1 && selection != 2){
+            System.out.println("Invalid input. Please try again.");
         }
-        return Selection;
+        return selection;
     }
 
 
